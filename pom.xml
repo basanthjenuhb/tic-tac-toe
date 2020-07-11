@@ -6,7 +6,13 @@
 
     <groupId>org.example</groupId>
     <artifactId>tic-tac-toe</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>tic-tac-toe-core</module>
+        <module>app</module>
+    </modules>
 
     <name>tic-tac-toe</name>
 
@@ -72,7 +78,7 @@
                         <configuration>
                             <classifier>spring-boot</classifier>
                             <mainClass>
-                                org.example.App
+                                org.tictactoe.App
                             </mainClass>
                         </configuration>
                     </execution>

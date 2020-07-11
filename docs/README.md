@@ -4,6 +4,9 @@
 
 We have components who work in tandem to keep the game going.
 
+![image](https://user-images.githubusercontent.com/20828431/87229099-06e60b80-c3c3-11ea-972e-60710bfec356.png)
+
+
 ### GameManager
 - Deals with aspects that are not core to the tic-tac-toe game. 
 - In our case, `GameManager` helps in coducting toss and assigning symbols to different players who are playing the game.

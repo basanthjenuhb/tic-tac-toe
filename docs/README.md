@@ -42,3 +42,8 @@ gameManager.playgame();
 - The game engine doesn't know and care about which players are playing as long as they maintain the contract of providing the next move to play the game.
 - `Human Player` is us, and just takes input from `STDIN` to tell the next move.
 - `Computer player` is the smart computer, it uses `MiniMax algorithm` to find the next best move given a state.
+
+### Benefits of this design
+- Non core game aspects are handled by `Gamemanager` component and doesn't affect how the `tic-tac-toe` game is played.
+- Only `GameEngine` is responsible for rules of the game. If there are rules that need to be extended, we can do it without altering other components.
+- `ComputerPlayer` and `HumanPlayer` are implementations of `Player` interface. So, if we want to change make the human play with a more smarter computer, we can do so without altering other components. We can have different more smarter algorithms implemented as a new implememntation of the `Player` interface.

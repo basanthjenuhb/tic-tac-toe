@@ -76,7 +76,8 @@
                             <goal>repackage</goal>
                         </goals>
                         <configuration>
-                            <classifier>spring-boot</classifier>
+                            <classifier>exec</classifier>
+                            <finalName>tic-tac-toe</finalName>
                             <mainClass>
                                 org.tictactoe.App
                             </mainClass>

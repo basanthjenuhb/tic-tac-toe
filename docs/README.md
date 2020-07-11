@@ -1,6 +1,4 @@
-# tic-tac-toe
-tic-tac-toe
-
+# Tic-Tac-Toe
 
 ## Components
 

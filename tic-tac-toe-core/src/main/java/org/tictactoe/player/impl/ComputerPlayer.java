@@ -10,11 +10,16 @@ import org.tictactoe.player.api.Player;
  * @author bjenuhb
  */
 
+/**
+ * This class simulates a plats.
+ * Takes the game state and desides on the next best move.
+ * It uses minimax algorithm. It goes over all the entire state space
+ * and finds the best move where it would win.
+ */
 public class ComputerPlayer implements Player {
 
     private MoveSymbol moveSymbol;
     private MoveSymbol otherPlayerSymbol;
-    private int movesMade = -1;
 
     @Override
     public void assignSymbol(MoveSymbol moveSymbol) {
@@ -29,12 +34,6 @@ public class ComputerPlayer implements Player {
     @Override
     public String getName() {
         return "Computer";
-    }
-
-    @Override
-    public void handleError(Exception e) {
-        log.info("Error occured: {}", e.getMessage());
-        movesMade--;
     }
 
     @Override
@@ -87,7 +86,8 @@ public class ComputerPlayer implements Player {
                 EngineGameState newGameState = engineGameState.cloneGameState();
                 newGameState.setSymbolAtPosition(i, currentMoveSymbol);
                 int bestMove = getBestMove(newGameState, !isMaximizer, depth + 1);
-                // To avoid integer overflow
+                // If you are going to win in the next move, take it.
+                // If you are going to loose in the next move, avoid it.
                 if (bestMove == Integer.MIN_VALUE || bestMove == Integer.MAX_VALUE) {
                     return bestMove;
                 } else {

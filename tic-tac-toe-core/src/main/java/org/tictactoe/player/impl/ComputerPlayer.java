@@ -62,6 +62,9 @@ public class ComputerPlayer implements Player {
     private int getBestMove(EngineGameState engineGameState, boolean isMaximizer, int depth) throws Exception {
 
         if (isMaximizer && GameEngineutil.isGameFinished(this.otherPlayerSymbol, engineGameState)) {
+            if (depth == 1) {
+                return Integer.MIN_VALUE;
+            }
             return -1;
         } else if (GameEngineutil.isGameFinished(this.moveSymbol, engineGameState)) {
             if (depth == 0) {
@@ -83,7 +86,13 @@ public class ComputerPlayer implements Player {
                 }
                 EngineGameState newGameState = engineGameState.cloneGameState();
                 newGameState.setSymbolAtPosition(i, currentMoveSymbol);
-                movePoints += getBestMove(newGameState, !isMaximizer, depth + 1);
+                int bestMove = getBestMove(newGameState, !isMaximizer, depth + 1);
+                // To avoid integer overflow
+                if (bestMove == Integer.MIN_VALUE || bestMove == Integer.MAX_VALUE) {
+                    return bestMove;
+                } else {
+                    movePoints += bestMove;
+                }
             }
         }
         return movePoints;

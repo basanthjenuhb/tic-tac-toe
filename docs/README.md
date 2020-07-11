@@ -6,6 +6,7 @@ We have components who work in tandem to keep the game going.
 
 ![image](https://user-images.githubusercontent.com/20828431/87229099-06e60b80-c3c3-11ea-972e-60710bfec356.png)
 
+[Demo](#demo)
 
 ### GameManager
 - Deals with aspects that are not core to the tic-tac-toe game. 
@@ -47,3 +48,115 @@ gameManager.playgame();
 - Non core game aspects are handled by `Gamemanager` component and doesn't affect how the `tic-tac-toe` game is played.
 - Only `GameEngine` is responsible for rules of the game. If there are rules that need to be extended, we can do it without altering other components.
 - `ComputerPlayer` and `HumanPlayer` are implementations of `Player` interface. So, if we want to change make the human play with a more smarter computer, we can do so without altering other components. We can have different more smarter algorithms implemented as a new implememntation of the `Player` interface.
+
+### Demo
+
+```
+[19:05:47] bjenuhb@ ~/work/tic-tac-toe (master ) $ java -jar app/target/tic-tac-toe-exec.jar
+Hello human player, Please enter your name: 
+basanth
+Conducting toss between 2 players
+First player is Computer - (X)
+Second player is basanth - (O)
+
+
+|  -1-  |  -2-  |  -3-  |
+-------------------------
+|  -4-  |  -5-  |  -6-  |
+-------------------------
+|  -7-  |  -8-  |  -9-  |
+-------------------------
+
+
+Player Computer's move
+Player Computer filled the position 5
+
+
+|  -1-  |  -2-  |  -3-  |
+-------------------------
+|  -4-  |   X   |  -6-  |
+-------------------------
+|  -7-  |  -8-  |  -9-  |
+-------------------------
+
+
+Player basanth's move
+Please enter a position, Your symbol is O
+1
+Player basanth filled the position 1
+
+
+|   O   |  -2-  |  -3-  |
+-------------------------
+|  -4-  |   X   |  -6-  |
+-------------------------
+|  -7-  |  -8-  |  -9-  |
+-------------------------
+
+
+Player Computer's move
+Player Computer filled the position 2
+
+
+|   O   |   X   |  -3-  |
+-------------------------
+|  -4-  |   X   |  -6-  |
+-------------------------
+|  -7-  |  -8-  |  -9-  |
+-------------------------
+
+
+Player basanth's move
+Please enter a position, Your symbol is O
+8
+Player basanth filled the position 8
+
+
+|   O   |   X   |  -3-  |
+-------------------------
+|  -4-  |   X   |  -6-  |
+-------------------------
+|  -7-  |   O   |  -9-  |
+-------------------------
+
+
+Player Computer's move
+Player Computer filled the position 7
+
+
+|   O   |   X   |  -3-  |
+-------------------------
+|  -4-  |   X   |  -6-  |
+-------------------------
+|   X   |   O   |  -9-  |
+-------------------------
+
+
+Player basanth's move
+Please enter a position, Your symbol is O
+9
+Player basanth filled the position 9
+
+
+|   O   |   X   |  -3-  |
+-------------------------
+|  -4-  |   X   |  -6-  |
+-------------------------
+|   X   |   O   |   O   |
+-------------------------
+
+
+Player Computer's move
+Player Computer filled the position 3
+
+
+|   O   |   X   |   X   |
+-------------------------
+|  -4-  |   X   |  -6-  |
+-------------------------
+|   X   |   O   |   O   |
+-------------------------
+
+
+Player Computer won the game. Congratulations 😀
+```

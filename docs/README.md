@@ -10,6 +10,18 @@ We have components who work in tandem to keep the game going.
 - In future, it can be used for other purposes, like conducting a tournament, score management etc.
 - `GameManager` accepts a bunch of players who are interested to play the game, does the pre work, and delegates to `GameEngine` to play the actual game.
 
+```
+GameManager gameManager = new GameManager(new HumanPlayer(), new ComputerPlayer());
+gameManager.playgame();
+```
+We initialize `GameManager` to play with 1 `HumanPlayer` and 1 `ComputerPlayer`
+An interesting thng is to see how 2 computer players would play against each other.
+It always ends in a draw.
+```
+GameManager gameManager = new GameManager(new ComputerPlayer(), new ComputerPlayer());
+gameManager.playgame();
+```
+
 ### GameEngine
 - Responsible for conducting the actual game.
 - Maintains the state of the game.

@@ -1,6 +1,6 @@
 # tic-tac-toe
 
-The codebase is `Java 11 compatible. Please use java 11 for the same`
+The codebase is `Java 11` compatible. Please use java 11 for the same
 
 To Run:
 ```

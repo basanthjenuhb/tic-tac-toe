@@ -3,6 +3,8 @@ package org.tictactoe.game.api;
 import org.tictactoe.game.impl.GameStateImpl;
 import org.tictactoe.player.api.Player;
 
+import java.util.Optional;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -21,6 +23,16 @@ public class GameEngine {
         this.engineGameState = new GameStateImpl(3);
     }
 
+    public void displayGameState() {
+        engineGameState.displayState();
+    }
+
+    /**
+     * Makes a move for a particular players
+     * @param player
+     * @param engineGameState
+     * @param moveSymbol
+     */
     private void handlePlayerMove(Player player, EngineGameState engineGameState, MoveSymbol moveSymbol) {
         engineGameState.displayState();
         log.info("Player {}'s move", player.getName());
@@ -37,33 +49,29 @@ public class GameEngine {
         log.info("Player {} filled the position {}", player.getName(), latestPosition);
     }
 
-    public Player playGame() throws Exception {
+    /**
+     * Returns a player who won the game.
+     * If draw, returns an empty optional
+     * @return
+     * @throws Exception
+     */
+    public Optional<Player> playGame() throws Exception {
         while (true) {
-
             handlePlayerMove(player1, engineGameState, MoveSymbol.CROSS);
             if (GameEngineutil.isGameFinished(MoveSymbol.CROSS, engineGameState)) {
-                engineGameState.displayState();
-                log.info("Player {} won the game.", player1.getName());
-                return player1;
+                return Optional.of(player1);
             };
             if (GameEngineutil.isDraw(engineGameState)) {
-                engineGameState.displayState();
-                log.info("Its a draw");
-                return null;
+                return Optional.empty();
             }
 
             handlePlayerMove(player2, engineGameState, MoveSymbol.CIRCLE);
             if (GameEngineutil.isGameFinished(MoveSymbol.CIRCLE, engineGameState)) {
-                engineGameState.displayState();
-                log.info("Player {} won the game.", player2.getName());
-                return player2;
+                return Optional.of(player2);
             };
             if (GameEngineutil.isDraw(engineGameState)) {
-                engineGameState.displayState();
-                log.info("Its a draw");
-                return null;
+                Optional.empty();
             }
-
         }
     }
 

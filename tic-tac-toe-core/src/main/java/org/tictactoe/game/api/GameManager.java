@@ -2,6 +2,8 @@ package org.tictactoe.game.api;
 
 import org.tictactoe.player.api.Player;
 
+import java.util.Optional;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -39,7 +41,13 @@ public class GameManager {
 
     public void playgame() {
         try {
-            this.gameEngine.playGame();
+            Optional<Player> player = this.gameEngine.playGame();
+            this.gameEngine.displayGameState();
+            player.ifPresentOrElse(p -> {
+                log.info("Player {} won the game. Congratulations \uD83D\uDE00", p.getName());
+            }, () -> {
+                log.info("It is a draw \uD83D\uDE00");
+            });
         } catch (Exception e) {
             log.error("Error while playing game");
         }

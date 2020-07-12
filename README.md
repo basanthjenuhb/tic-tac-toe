@@ -2,6 +2,8 @@
 
 The codebase is `Java 11` compatible. Please use java 11 for the same
 
+# [Docs](https://basanthjenuhb.github.io/tic-tac-toe/)
+
 To Run:
 ```
 mvn clean install

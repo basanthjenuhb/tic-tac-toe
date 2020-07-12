@@ -1,9 +1,9 @@
 package org.tictactoe.player.impl;
 
 import org.tictactoe.game.api.EngineGameState;
-import org.tictactoe.game.api.GameEngineutil;
 import org.tictactoe.game.api.MoveSymbol;
 import org.tictactoe.game.api.ReadableGameState;
+import org.tictactoe.game.impl.GameEngineutil;
 import org.tictactoe.player.api.Player;
 
 /**

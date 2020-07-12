@@ -1,4 +1,7 @@
-package org.tictactoe.game.api;
+package org.tictactoe.game.impl;
+
+import org.tictactoe.game.api.MoveSymbol;
+import org.tictactoe.game.api.ReadableGameState;
 
 /**
  * @author bjenuhb

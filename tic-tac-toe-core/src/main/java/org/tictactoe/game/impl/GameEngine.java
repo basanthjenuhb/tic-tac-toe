@@ -1,6 +1,7 @@
-package org.tictactoe.game.api;
+package org.tictactoe.game.impl;
 
-import org.tictactoe.game.impl.GameStateImpl;
+import org.tictactoe.game.api.EngineGameState;
+import org.tictactoe.game.api.MoveSymbol;
 import org.tictactoe.player.api.Player;
 
 import java.util.Optional;
@@ -12,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 
 @Slf4j
-public class GameEngine {
+class GameEngine {
 
     private Player player1, player2;
     private EngineGameState engineGameState;
@@ -55,7 +56,7 @@ public class GameEngine {
      * @return
      * @throws Exception
      */
-    public Optional<Player> playGame() throws Exception {
+    public Optional<Player> conductGame() throws Exception {
         while (true) {
             handlePlayerMove(player1, engineGameState, MoveSymbol.CROSS);
             if (GameEngineutil.isGameFinished(MoveSymbol.CROSS, engineGameState)) {

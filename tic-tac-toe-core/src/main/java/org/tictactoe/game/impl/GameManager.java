@@ -1,5 +1,7 @@
-package org.tictactoe.game.api;
+package org.tictactoe.game.impl;
 
+import org.tictactoe.game.api.MoveSymbol;
+import org.tictactoe.game.impl.GameEngine;
 import org.tictactoe.player.api.Player;
 
 import java.util.Optional;
@@ -32,6 +34,7 @@ public class GameManager {
             this.player1 = this.player2;
             this.player2 = temp;
         }
+        log.info("Player {} won the toss", player1.getName());
         player1.assignSymbol(MoveSymbol.CROSS);
         player2.assignSymbol(MoveSymbol.CIRCLE);
 
@@ -39,9 +42,9 @@ public class GameManager {
         log.info("Second player is {} - ({})", player2.getName(), MoveSymbol.CIRCLE.getSymbol());
     }
 
-    public void playgame() {
+    public void manageGame() {
         try {
-            Optional<Player> player = this.gameEngine.playGame();
+            Optional<Player> player = this.gameEngine.conductGame();
             this.gameEngine.displayGameState();
             player.ifPresentOrElse(p -> {
                 log.info("Player {} won the game. Congratulations \uD83D\uDE00", p.getName());

@@ -16,14 +16,14 @@ We have components who work in tandem to keep the game going.
 
 ```
 GameManager gameManager = new GameManager(new HumanPlayer(), new ComputerPlayer());
-gameManager.playgame();
+gameManager.manageGame();
 ```
 - We initialize `GameManager` to play with 1 `HumanPlayer` and 1 `ComputerPlayer`
 - An interesting thng is to see how 2 computer players would play against each other.
 - It always ends in a draw as both players try to make optimum moves.
 ```
 GameManager gameManager = new GameManager(new ComputerPlayer(), new ComputerPlayer());
-gameManager.playgame();
+gameManager.manageGame();
 ```
 
 ### GameEngine

@@ -160,3 +160,14 @@ Player Computer filled the position 3
 
 Player Computer won the game. Congratulations 😀
 ```
+
+### References
+1. Minimax algorithm
+  - https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-3-tic-tac-toe-ai-finding-optimal-move/
+  - https://www.youtube.com/watch?v=trKjYdBASyQ&t=1116s
+
+### Next steps if I had more time
+1. Add GUI
+1. Implement a better version of minimax algorithm
+1. Make `GameManager` conduct a tournament
+1. Add extensive Unit tests. (I have only added some)

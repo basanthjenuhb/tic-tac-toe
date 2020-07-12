@@ -4,7 +4,7 @@
 
 We have components who work in tandem to keep the game going.
 
-![image](https://user-images.githubusercontent.com/20828431/87229099-06e60b80-c3c3-11ea-972e-60710bfec356.png)
+![image](https://user-images.githubusercontent.com/20828431/87240113-48fb6580-c434-11ea-80b4-0db22cd39089.png)
 
 [Demo](#demo)
 

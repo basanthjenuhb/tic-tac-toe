@@ -8,7 +8,7 @@ We have components who work in tandem to keep the game going.
 
 [Demo](#demo)
 
-### GameManager
+### GameManager - [GameManager.java](https://github.com/basanthjenuhb/tic-tac-toe/blob/master/tic-tac-toe-core/src/main/java/org/tictactoe/game/impl/GameManager.java)
 - Deals with aspects that are not core to the tic-tac-toe game. 
 - In our case, `GameManager` helps in coducting toss and assigning symbols to different players who are playing the game.
 - In future, it can be used for other purposes, like conducting a tournament, score management etc.
@@ -26,18 +26,18 @@ GameManager gameManager = new GameManager(new ComputerPlayer(), new ComputerPlay
 gameManager.manageGame();
 ```
 
-### GameEngine
+### GameEngine - [GameEngine.java](https://github.com/basanthjenuhb/tic-tac-toe/blob/master/tic-tac-toe-core/src/main/java/org/tictactoe/game/impl/GameEngine.java)
 - Responsible for conducting the actual game.
 - Maintains the state of the game.
 - Ask the players to make the next move and update the state of the game.
 - Check if the game has finished or draw etc.
 - Uses `GameState` to manage the state.
 
-### GameState
+### GameState - [GameState.java](https://github.com/basanthjenuhb/tic-tac-toe/blob/master/tic-tac-toe-core/src/main/java/org/tictactoe/game/impl/GameStateImpl.java)
 - It is a dumb state object who keeps track of the `tic-tac-toe` game board.
 - Has logic to validate that illegal moves are not made.
 
-### Player
+### Player - [HumanPlayer.java](https://github.com/basanthjenuhb/tic-tac-toe/blob/master/tic-tac-toe-core/src/main/java/org/tictactoe/player/impl/HumanPlayer.java), [ComputerPlayer.java](https://github.com/basanthjenuhb/tic-tac-toe/blob/master/tic-tac-toe-core/src/main/java/org/tictactoe/player/impl/ComputerPlayer.java)
 - `Player` is anyone who is interested to play the `tic-tac-toe` game.
 - It can be a `Human Player` or a `Computer player`.
 - The game engine doesn't know and care about which players are playing as long as they maintain the contract of providing the next move to play the game.

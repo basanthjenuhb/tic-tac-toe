@@ -8,5 +8,6 @@ public class App {
     public static void main( String[] args ) {
         GameManager gameManager = new GameManager(new HumanPlayer(), new ComputerPlayer());
         gameManager.manageGame();
+        
     }
 }
